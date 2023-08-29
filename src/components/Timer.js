@@ -44,6 +44,14 @@ export default function Timer(timerContainer) {
   enableStart();
   resetButton.addEventListener("click", handleReset);
 
+  timerContainer.addEventListener("endtimer", () => {
+    startButton.removeEventListener("click", handleStart);
+    startButton.classList.add("disable");
+
+    pauseButton.classList.add("disable");
+    pauseButton.removeEventListener("click", handlePause);
+  });
+
   return {
     start: handleStart,
     pause: handlePause,

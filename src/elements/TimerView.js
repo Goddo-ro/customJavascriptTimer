@@ -7,7 +7,6 @@ class TimerView extends HTMLElement {
     this.addEventListener("starttimer", this.startTimer);
     this.addEventListener("pausetimer", this.pauseTimer);
     this.addEventListener("resettimer", this.resetTimer);
-    this.addEventListener("endtimer", this.endTimer);
 
     if (this.getAttribute("seconds")) this.handleSeconds(this.getAttribute("seconds"));
     else if (this.getAttribute("to-time")) this.handleToTime(this.getAttribute("to-time"));
@@ -92,7 +91,8 @@ class TimerView extends HTMLElement {
       this.seconds--;
       this.timeSpan.innerHTML = this.getFormattedTime();
       if (this.seconds <= 0) {
-        this.dispatchEvent(new CustomEvent("endtimer"));
+        this.endTimer();
+        this.parentElement.dispatchEvent(new CustomEvent("endtimer"));
       }
     }, 1000);
   }
