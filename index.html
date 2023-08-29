@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>Custom Timer</title>
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <section class="timers-example">
+        <div>
+            <pre>Таймер с to-time</pre>
+            <div id="timer1" class="timer-container">
+                <timer-view to-time="00:00:00"></timer-view>
+                <ul class="timer-container__buttons">
+                    <li class="timer-container__button timer-container__start-button">
+                        <img class="time-container__icon" src="src/icons/mini-arrow-start-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__pause-button">
+                        <img class="time-container__icon" src="src/icons/pause-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__reset-button">
+                        <img class="time-container__icon" src="src/icons/reset-svgrepo-com.svg" alt="start">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <pre>Таймер с seconds</pre>
+            <div id="timer2" class="timer-container">
+                <timer-view seconds="6"></timer-view>
+                <ul class="timer-container__buttons">
+                    <li class="timer-container__button timer-container__start-button">
+                        <img class="time-container__icon" src="src/icons/mini-arrow-start-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__pause-button">
+                        <img class="time-container__icon" src="src/icons/pause-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__reset-button">
+                        <img class="time-container__icon" src="src/icons/reset-svgrepo-com.svg" alt="start">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <pre>Меняем атрибут seconds</pre>
+            <div id="timer3" class="timer-container">
+                <timer-view id="change-attribute" seconds="5"></timer-view>
+                <ul class="timer-container__buttons">
+                    <li class="timer-container__button timer-container__start-button">
+                        <img class="time-container__icon" src="src/icons/mini-arrow-start-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__pause-button">
+                        <img class="time-container__icon" src="src/icons/pause-svgrepo-com.svg" alt="start">
+                    </li>
+                    <li class="timer-container__button timer-container__reset-button">
+                        <img class="time-container__icon" src="src/icons/reset-svgrepo-com.svg" alt="start">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+</main>
+</body>
+<script src="src/elements/TimerView.js" type="module"></script>
+<script src="src/timerSetter.js" type="module"></script>
+<script src="src/changeTimerAttributeExample.js" type="module"></script>
+</html>
